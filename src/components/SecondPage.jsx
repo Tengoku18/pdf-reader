@@ -10,11 +10,11 @@ const SecondPage = () => {
 
   const realUrl = () => {
     if (url === 0) {
-      return "https://arxiv.org/pdf/2212.08011.pdf";
+      return "/samplepdf1.pdf";
     } else if (url === 1) {
-      return "https://arxiv.org/pdf/2212.07937.pdf";
+      return "/samplepdf2.pdf";
     } else if (url === 2) {
-      return " https://arxiv.org/pdf/2212.07931.pdf";
+      return " /samplepdf3.pdf";
     }
   };
 
