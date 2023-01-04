@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { createContext, useState } from "react";
+import LandingPage from "./components/LandingPage";
+import { Route, Routes } from "react-router-dom";
+import SecondPage from "./components/SecondPage";
+
+export const urlContext = createContext();
 
 function App() {
+  const [url, setUrl] = useState(null);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <urlContext.Provider value={{ url, setUrl }}>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/annotation" element={<SecondPage />} />
+      </Routes>
+    </urlContext.Provider>
   );
 }
 
